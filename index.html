@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NoteYourNeed（记你需）— 嵌套文件夹记事</title>
-  <meta name="description" content="NoteYourNeed 用嵌套文件夹收文档。不登录则不联网。可下载 Windows 安装包与 Android APK。">
+  <title>NoteYourNeed</title>
+  <meta name="description" content="NoteYourNeed是一款个人开发的记事软件，如不登录 NoteYourNeed 进行同步，则不会进行任何网络链接，保证您信息的安全性。">
   <meta name="keywords" content="NoteYourNeed,记你需,NN,笔记,文件夹,Markdown,Windows,Android">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="author" content="NoteYourNeed">
-  <meta name="theme-color" content="#f4f5f7">
+  <meta name="theme-color" content="#12352a">
   <link rel="canonical" href="./">
   <link rel="alternate" hreflang="zh-Hans" href="./">
   <link rel="alternate" hreflang="en" href="html/en.html">
@@ -21,14 +21,14 @@
   <meta property="og:site_name" content="NoteYourNeed">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:locale:alternate" content="en_US">
-  <meta property="og:title" content="NoteYourNeed（记你需）— 嵌套文件夹记事">
-  <meta property="og:description" content="建文件夹，写文档，留在本机。要上传才登录。">
+  <meta property="og:title" content="NoteYourNeed">
+  <meta property="og:description" content="NoteYourNeed是一款个人开发的记事软件。">
   <meta property="og:url" content="./">
   <meta property="og:image" content="images/icon.png">
   <meta property="og:image:alt" content="NoteYourNeed 图标">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="NoteYourNeed（记你需）">
-  <meta name="twitter:description" content="建文件夹，写文档，留在本机。要上传才登录。">
+  <meta name="twitter:title" content="NoteYourNeed">
+  <meta name="twitter:description" content="NoteYourNeed是一款个人开发的记事软件。">
   <meta name="twitter:image" content="images/icon.png">
   <link rel="stylesheet" href="css/style.css">
   <script type="application/ld+json">
@@ -85,7 +85,7 @@
     <div class="wrap hero">
       <div class="lead">
         <h1>NoteYourNeed</h1>
-        <p class="lede">建一个文件夹，写文档，留在本机。要上传才登录。</p>
+        <p class="lede">NoteYourNeed是一款个人开发的记事软件，如不登录 NoteYourNeed 进行同步，则不会进行任何网络链接，保证您信息的安全性。</p>
         <div class="actions">
           <a class="btn" data-download="windows" href="https://pub-40a7fb290d21422a914346f0b0ba2afd.r2.dev/NoteYourNeed_Setup_1.0.38.exe"><span class="ico ico-down" aria-hidden="true"></span>Windows <span data-ver="windows">1.0.38</span></a>
           <a class="btn btn-ghost" data-download="android" href="https://pub-40a7fb290d21422a914346f0b0ba2afd.r2.dev/NoteYourNeed_Android_1.0.40.apk"><span class="ico ico-phone" aria-hidden="true"></span>Android <span data-ver="android">1.0.40</span></a>
@@ -94,55 +94,49 @@
       <div class="desk" data-notes>
         <div class="desk-bar">
           <img src="images/icon.png" width="16" height="16" alt="">
-          <span>示例笔记</span>
-          <span>点一篇文档</span>
+          <span>开始记录...</span>
+          <span>选择或创建一个文档开始记录</span>
         </div>
         <div class="note-body">
           <ul class="tree">
             <li>
-              <div class="tree-label">工作</div>
+              <div class="tree-label">新建文件夹</div>
               <ul>
-                <li><button type="button" data-open="week">周报</button></li>
-                <li><button type="button" data-open="meet" aria-current="true">会议纪要</button></li>
-              </ul>
-            </li>
-            <li>
-              <div class="tree-label">生活</div>
-              <ul>
-                <li><button type="button" data-open="shop">购物清单</button></li>
+                <li><button type="button" data-open="doc" aria-current="true">新建文档</button></li>
+                <li><button type="button" data-open="image">插入图片</button></li>
+                <li><button type="button" data-open="copy">插入可复制块</button></li>
               </ul>
             </li>
           </ul>
-          <div class="sheet" data-panel="meet">
-            <h3>会议纪要</h3>
-            <p>结论放在这个文件夹里。要反复用的地址，做成可复制块。</p>
+          <div class="sheet" data-panel="doc">
+            <h3>新建文档</h3>
+            <p>开始记录...</p>
+          </div>
+          <div class="sheet" data-panel="image" hidden>
+            <h3>插入图片</h3>
+            <p>请拖入图片文件（jpg / png / gif / webp / bmp）。双击放大该图片。</p>
+          </div>
+          <div class="sheet" data-panel="copy" hidden>
+            <h3>插入可复制块</h3>
             <div class="snip">
-              <b>会议室</b>
-              <p id="room">3F-12 · 周四 15:00</p>
+              <b>小标题</b>
+              <p id="room">输入内容（复制按钮将复制此处）</p>
               <button class="btn" type="button" data-copy="#room"><span class="ico ico-copy" aria-hidden="true"></span>复制</button>
             </div>
-          </div>
-          <div class="sheet" data-panel="week" hidden>
-            <h3>周报</h3>
-            <p>还在本机。没有登录，所以没有上传。</p>
-          </div>
-          <div class="sheet" data-panel="shop" hidden>
-            <h3>购物清单</h3>
-            <p>纸、笔，再单独建一个收据文件夹。</p>
           </div>
         </div>
       </div>
     </div>
     <section class="wrap block">
-      <h2>留在本机的部分</h2>
+      <h2>格式工具</h2>
       <ul class="facts">
-        <li><span class="ico ico-pen" aria-hidden="true"></span><div><b>富文本和 Markdown</b><span>加粗、字号、颜色、引用、列表。正文可以和 Markdown 互转。</span></div></li>
-        <li><span class="ico ico-image" aria-hidden="true"></span><div><b>图片和可复制块</b><span>插入或拖入图片。可复制块点一下复制正文。</span></div></li>
-        <li><span class="ico ico-box" aria-hidden="true"></span><div><b>.nnb 导入导出</b><span>勾选文件夹或文档。导入时再选目标文件夹。</span></div></li>
+        <li><span class="ico ico-pen" aria-hidden="true"></span><div><b>格式工具</b><span>粗体、斜体、下划线、删除线、字号、文字颜色、引用、项目符号、编号列表。</span></div></li>
+        <li><span class="ico ico-image" aria-hidden="true"></span><div><b>插入图片</b><span>从相册选择图片。请拖入图片文件（jpg / png / gif / webp / bmp）。双击放大该图片。</span></div></li>
+        <li><span class="ico ico-box" aria-hidden="true"></span><div><b>导出</b><span>勾选文件夹将导出其目录结构；仅勾选文档则只导出文件。支持多选组合。</span></div></li>
       </ul>
     </section>
     <section class="wrap block" id="download">
-      <h2>文件</h2>
+      <h2>下载</h2>
       <ul class="files">
         <li>
           <span class="ico ico-monitor" aria-hidden="true"></span>

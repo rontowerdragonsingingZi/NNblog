@@ -50,21 +50,17 @@
         var target = document.querySelector(text);
         if (target) value = target.textContent.trim();
       }
-      var done = function () {
-        button.classList.add("is-done");
-        window.setTimeout(function () { button.classList.remove("is-done"); }, 1200);
-      };
       var fallback = function () {
         var area = document.createElement("textarea");
         area.value = value;
         area.setAttribute("readonly", "");
         document.body.appendChild(area);
         area.select();
-        try { document.execCommand("copy"); done(); } catch (err) {}
+        try { document.execCommand("copy"); } catch (err) {}
         area.remove();
       };
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(value).then(done).catch(fallback);
+        navigator.clipboard.writeText(value).catch(fallback);
       } else {
         fallback();
       }
