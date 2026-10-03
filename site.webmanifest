@@ -1,0 +1,17 @@
+{
+  "name": "NoteYourNeed",
+  "short_name": "NoteYourNeed",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f5f7",
+  "theme_color": "#00b96b",
+  "lang": "zh-Hans",
+  "icons": [
+    {
+      "src": "images/icon.png",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
